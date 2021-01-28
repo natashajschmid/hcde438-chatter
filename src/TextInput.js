@@ -17,18 +17,27 @@ function TextInput(props) {
   }
 
   return <footer className="text-input">
-    <input 
-      placeholder="Write your message"
-      value={text}
-      onChange={e=> setText(e.target.value)}
-      onKeyPress={keyPressed}
-    />
-    <button
-      onClick={sendMessage}
-      disabled={!text}
-    >
-      SEND
-    </button>
+    
+    <div className="button-inside">
+      <input className="input-box"
+        placeholder="Send a message"
+        value={text}
+        style={{color: "white"}}
+        onChange={e=> setText(e.target.value)}
+        onKeyPress={keyPressed}
+      />
+      
+      <button className="send-button"
+        onClick={sendMessage}
+        disabled={!text}
+      >
+        {/* SEND */}
+        {/* <i class='fas fa-arrow-up' style={{color: "black"}}></i> */}
+        <i class='fas fa-arrow-circle-up' style={{color: "white"}}></i>
+
+      </button>
+    </div>
+
   </footer>
 
 }

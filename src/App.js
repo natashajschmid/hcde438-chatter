@@ -3,8 +3,9 @@ import {useState} from 'react';
 
 import TextInput from './TextInput';
 
+
 function App() {
-  const [messages, setMessages] = useState([{text: 'Type in a message'}]);
+  const [messages, setMessages] = useState([{text: 'Send a message'}]);
 
   return (
     <div className="App">
