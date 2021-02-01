@@ -21,6 +21,10 @@ html {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   width: 100vw;
@@ -43,7 +47,7 @@ html {
 .header {
   background: rgba(255,255,255,0.4);
   border-bottom: 1px solid white;
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   padding: 0 12px;
@@ -63,54 +67,73 @@ html {
   background-size: cover;
 }
 
-.text-input {
-  background: rgba(255,255,255,0.4);
-  border-top: 1px solid white;
-  height: 2.2rem;
+.messages {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  overflow: auto;
 }
 
-.button-inside {
-  position:relative;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  width: 20rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.message-row {
+  width: 100%;
 }
 
-.input-box {
+.message {
   background: black;
-  border-color: white;
-  border-radius: 18px;
-  border-width: thin;
-  border-style: solid;
-  /* height:18px; */
-  height: 1.2rem;
-  width:100%;
-  padding: 2px 0px 2px 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 4px;
+  display: inline-block;
+  padding: 4px 12px;
+}
+
+.text-input {
+  background: rgba(255,255,255,0.2);
+  border-top: 1px solid white;
+  height: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .send-button {
   position:absolute;
-  /* top: 0rem; */
-  /* right: -0.65rem; */
-  top: -1px;
-  right: -12px;
-  border:none;
-  /* height:20px;
-  width:20px; */
+  right:0.65rem;
+  top:0.5rem;
   border-radius:100%;
-  outline:none;
-  text-align:center;
-  font-weight:bold;
-  padding:2px;
-  background: none;
-  /* font-size: 1.1rem; */
-  font-size: 1.3rem;
-}
-
-.send-button:hover {
+  border:1px solid white;
+  background:white;
+  color:black;
   cursor: pointer;
+  outline:none;
+  height:1.4rem;
+  width:1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.send-button[disabled] {
+  background: grey;
+  cursor: default;
+}
+
+.send-button > svg {
+  color: black;
+}
+
+.send-button[disabled] > svg {
+  color: white;
+}
+
+.input {
+  height: 1.65rem;
+  width: calc(100% - 1rem);
+  background:rgba(0, 0, 0, 0.5);
+  border-radius: 0.8rem;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  padding-left: 10px;
+}

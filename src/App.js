@@ -2,10 +2,13 @@ import './App.css';
 import {useState} from 'react';
 
 import TextInput from './TextInput';
+import Message from './Message';
 
 
 function App() {
-  const [messages, setMessages] = useState([{text: 'Send a message'}]);
+  const [messages, setMessages] = useState([]);
+
+  console.log(messages);
 
   return (
     <div className="App">
@@ -14,14 +17,15 @@ function App() {
         CHATTER
       </header>
 
-      <div className="message">
-        {messages[0].text}
-      </div>
+    <main className="messages">
+      {messages.map((m,i)=> {
+        return <Message key={i} {...m} />
+      })}
+    </main>
 
       <TextInput 
-        send={t=> setMessages([{text:t}])}
+        send={(t)=> setMessages( [{text:t}, ...messages] )}
       />
-
     </div>
   );
 }
