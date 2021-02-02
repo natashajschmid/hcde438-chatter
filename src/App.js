@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="header">
         <div className="logo" />
-        CHATTER
+        chatter
       </header>
 
     <main className="messages">

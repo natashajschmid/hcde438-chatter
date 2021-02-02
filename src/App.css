@@ -21,6 +21,33 @@ html {
   }
 }
 
+
+.css-selector {
+  background: linear-gradient(270deg, #c1f0e4, #f8e5f2, #f2f1c7, #d0d9f2, #f0d3c1);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: ChatterBackground 59s ease infinite;
+  -moz-animation: ChatterBackground 59s ease infinite;
+  animation: ChatterBackground 59s ease infinite;
+}
+
+@-webkit-keyframes ChatterBackground {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@-moz-keyframes ChatterBackground {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@keyframes ChatterBackground {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -30,38 +57,49 @@ html {
   width: 100vw;
   height: 100vh;
   
-  background: #83a4d4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  background: #FEAC5E;
+  /* background: #FEAC5E;
   background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
   background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
   
+  background: #83a4d4;  
+  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+  background: linear-gradient(to right, #b6fbff, #83a4d4); 
+ */
+
+  background: linear-gradient(270deg, #c1f0e4, #f8e5f2, #f2f1c7, #d0d9f2, #f0d3c1);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: ChatterBackground 59s ease infinite;
+  -moz-animation: ChatterBackground 59s ease infinite;
+  animation: ChatterBackground 59s ease infinite;
+
+
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  font-family: 'Karla', sans-serif;
 }
 
 .header {
-  background: rgba(255,255,255,0.4);
-  border-bottom: 1px solid white;
-  height: 2.5rem;
+  /* background: rgba(255,255,255,0.4); */
+  /* border-bottom: 1px solid white; */
+  height: 4rem;
   display: flex;
   align-items: center;
   padding: 0 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
+  color: #545454;
 }
 
 .logo {
-  height: 1.8rem;
-  width: 1.8rem;
-  margin-right: 10px;
+  height: 2.8rem;
+  width: 2.8rem;
   /* background: url(https://emoji.slack-edge.com/T01HUNLEC2E/partyparrot/f239540fcb56c0b4.gif); */
-  background: url(./img/parrot.gif);
+  /* background: url(./img/parrot.gif); */
+  background: url(./img/plant-logo.png);
   background-repeat: no-repeat;
   background-origin: center;
   background-size: cover;
@@ -79,17 +117,26 @@ html {
 }
 
 .message {
-  background: black;
-  color: white;
-  border-radius: 10px;
+  /* background: black; */
+  background:  rgba(255,255,255,0.6);
+  color: #545454;
+  border-radius: 8px;
   margin: 4px;
   display: inline-block;
   padding: 4px 12px;
+  font-size: 0.8rem;
+
+  /* display: flex;
+  justify-content: left;
+  background: none;
+  border-radius: 0;
+  border-left: 2px solid white;
+  text-align: left; */
 }
 
 .text-input {
-  background: rgba(255,255,255,0.2);
-  border-top: 1px solid white;
+  /* background: rgba(255,255,255,0.2);
+  border-top: 1px solid white; */
   height: 2.5rem;
   position: relative;
   display: flex;
@@ -112,19 +159,26 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.send-button[disabled] {
-  background: grey;
-  cursor: default;
+
+  border-radius: 0.1rem;
+  border: none;
+  background: none;
+  font-size: 1.2rem;;
 }
 
 .send-button > svg {
-  color: black;
+  color: white;
+}
+
+.send-button[disabled] {
+  /* background: grey;
+  cursor: default; */
 }
 
 .send-button[disabled] > svg {
-  color: white;
+  /* color: white; */
+  color: #e5e5e5;
 }
 
 .input {
@@ -136,4 +190,26 @@ html {
   border: 1px solid white;
   color: white;
   padding-left: 10px;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.8rem;
+
+
+
+  height: 1.65rem;
+  width: calc(100% - 1rem);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  color: white;
+  padding-left: 10px;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.8rem;
+  /* margin-bottom: 5px; */
+  /* background-image: linear-gradient(319deg, #cdedfd 0%, #ffec82 37%, #ffcfd2 100%); */
+}
+
+.input::placeholder {
+  /* color: #bbbbbb; */
+  color: #e5e5e5;
 }
