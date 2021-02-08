@@ -92,6 +92,11 @@ html {
   font-size: 1.2rem;
   font-weight: bold;
   color: #545454;
+  justify-content: space-between;
+}
+
+.header-group {
+  display: flex;
 }
 
 .logo {
@@ -103,6 +108,12 @@ html {
   background-repeat: no-repeat;
   background-origin: center;
   background-size: cover;
+}
+
+.header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .messages {
@@ -121,10 +132,11 @@ html {
   background:  rgba(255,255,255,0.6);
   color: #545454;
   border-radius: 8px;
-  margin: 4px;
+  margin: 0.55rem;
   display: inline-block;
   padding: 4px 12px;
   font-size: 0.8rem;
+  position: relative;
 
   /* display: flex;
   justify-content: left;
@@ -132,6 +144,15 @@ html {
   border-radius: 0;
   border-left: 2px solid white;
   text-align: left; */
+}
+
+.message-name {
+  position: absolute;
+  top: -0.7rem;
+  font-size: 0.55rem;
+  color: black;
+  font-weight: bold;
+  left: 7px;
 }
 
 .text-input {
@@ -212,4 +233,45 @@ html {
 .input::placeholder {
   /* color: #bbbbbb; */
   color: #e5e5e5;
+}
+
+/* .name-container {
+  display: flex;
+} */
+
+.name-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #545454;
+}
+
+.name-input {
+  height: 1.1rem;
+  width: calc(100% - 3rem);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  color: white;
+  padding-left: 8px;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  /* margin: 0.2rem 0.3rem 0rem 0rem; */
+}
+
+.name-icon {
+  margin-left: 0.5rem;
+}
+
+.name-ok {
+  color: #545454;
+}
+
+.name-edit {
+  color: #545454;
 }
