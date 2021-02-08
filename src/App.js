@@ -8,8 +8,8 @@ import NamePicker from './NamePicker';
 
 
 function App() {
-  // const messages = useDB();
-  const [messages, setMessages] = useState([]);
+  const messages = useDB();
+  // const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState(localStorage.getItem('username') || '');
 
   console.log(messages);
@@ -26,12 +26,14 @@ function App() {
 
     <main className="messages">
       {messages.map((msg,i)=> {
-        return <Message key={i} {...msg} />
+        const isMe = msg.name===username;
+        return <Message key={i} {...msg} isMe={isMe} />
       })}
     </main>
 
       <TextInput 
-        send={(t)=> setMessages([{text:t, name:username, date:new Date()}, ...messages])}
+        // send={(t)=> setMessages([{text:t, name:username, date:new Date()}, ...messages])}
+        send={(t)=> db.send({text:t, name:username, date:new Date()})}
       />
     </div>
   );
